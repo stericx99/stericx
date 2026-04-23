@@ -1,0 +1,13 @@
+{
+  "name": "stericx-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "STERICX static site with Vercel serverless contact form",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
