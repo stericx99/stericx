@@ -7,10 +7,10 @@
 <meta name="description" content="STERICX builds unified systems for fragmented industries, enabling trust, control, and intelligent coordination at scale.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#080808">
-<link rel="icon" type="image/png" href="Stericx%20Logo.png">
-<link rel="apple-touch-icon" href="Stericx%20Logo.png">
-<link rel="shortcut icon" href="Stericx%20Logo.png">
-<link rel="preload" as="image" href="Stericx%20Logo.png">
+<link rel="icon" type="image/png" href="stericx-symbol.png">
+<link rel="apple-touch-icon" href="stericx-symbol.png">
+<link rel="shortcut icon" href="stericx-symbol.png">
+<link rel="preload" as="image" href="stericx-symbol.png">
 <link rel="preload" as="image" href="STERICX%20text.png">
 <meta property="og:title" content="STERICX - Structure Defines Scale">
 <meta property="og:description" content="STERICX builds unified systems for fragmented industries, enabling trust, control, and intelligent coordination at scale.">
@@ -61,7 +61,6 @@ body::after{
 #logo-intro{
   position:fixed;inset:0;z-index:9997;
   min-height:100vh;
-  min-height:100dvh;
   background:var(--bg);
   display:flex;align-items:center;justify-content:center;
   pointer-events:none;
@@ -224,7 +223,7 @@ section{padding:120px max(5vw,24px)}
 
 /* ── HERO ── */
 #hero{
-  min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
+  min-height:100vh;display:flex;flex-direction:column;
   justify-content:flex-end;padding-top:0;padding-bottom:80px;
   position:relative;overflow:hidden;
 }
@@ -246,7 +245,9 @@ section{padding:120px max(5vw,24px)}
   font-family:var(--display);
   font-size:clamp(52px,8.5vw,118px);
   font-weight:800;line-height:0.94;
-  letter-spacing:0;color:var(--text-primary);
+  letter-spacing:-0.03em;color:var(--text-primary);
+  font-variant-ligatures:none;
+  font-feature-settings:"liga" 0,"clig" 0;
   max-width:100%;
   overflow-wrap:break-word;
   opacity:0;animation:fadeUp 0.9s var(--ease) 0.25s forwards;
@@ -287,7 +288,7 @@ section{padding:120px max(5vw,24px)}
 .about-headline{
   font-family:var(--display);
   font-size:clamp(26px,3.2vw,42px);
-  font-weight:700;line-height:1.1;letter-spacing:0;
+  font-weight:700;line-height:1.1;letter-spacing:-0.02em;
   color:var(--text-primary);
 }
 .about-headline em{font-style:normal;color:var(--accent)}
@@ -312,7 +313,7 @@ section{padding:120px max(5vw,24px)}
 .principle-title{
   font-family:var(--display);font-size:16px;font-weight:600;
   color:var(--text-primary);margin-bottom:10px;
-  line-height:1.25;letter-spacing:0;
+  line-height:1.25;letter-spacing:-0.01em;
 }
 .principle-body{font-size:13.5px;font-weight:300;color:var(--text-tertiary);line-height:1.7}
 
@@ -332,7 +333,7 @@ section{padding:120px max(5vw,24px)}
   font-family:var(--display);
   font-size:clamp(22px,3.8vw,50px);
   font-weight:700;line-height:1.14;
-  letter-spacing:0;color:var(--text-primary);
+  letter-spacing:-0.025em;color:var(--text-primary);
   max-width:820px;position:relative;z-index:1;
 }
 .vision-quote .muted{color:var(--text-tertiary)}
@@ -344,7 +345,7 @@ section{padding:120px max(5vw,24px)}
 .vision-stat{display:flex;flex-direction:column;gap:6px}
 .vision-stat-num{
   font-family:var(--display);font-size:30px;font-weight:800;
-  color:var(--text-primary);letter-spacing:0;line-height:1;
+  color:var(--text-primary);letter-spacing:-0.02em;line-height:1;
 }
 .vision-stat-label{
   font-family:var(--mono);font-size:10px;font-weight:400;
@@ -359,7 +360,7 @@ section{padding:120px max(5vw,24px)}
   font-family:var(--display);
   font-size:clamp(24px,2.8vw,38px);
   font-weight:700;line-height:1.12;
-  letter-spacing:0;color:var(--text-primary);margin-bottom:22px;
+  letter-spacing:-0.02em;color:var(--text-primary);margin-bottom:22px;
 }
 .industry-text{
   font-size:15px;font-weight:300;
@@ -391,7 +392,7 @@ section{padding:120px max(5vw,24px)}
 .capability:hover .capability-icon svg{stroke:var(--accent)}
 .capability-title{
   font-family:var(--display);font-size:14.5px;font-weight:600;
-  color:var(--text-primary);margin-bottom:5px;letter-spacing:0;
+  color:var(--text-primary);margin-bottom:5px;letter-spacing:-0.01em;
 }
 .capability-desc{font-size:13px;font-weight:300;color:var(--text-tertiary);line-height:1.65}
 
@@ -401,7 +402,7 @@ section{padding:120px max(5vw,24px)}
 .contact-headline{
   font-family:var(--display);
   font-size:clamp(26px,3.2vw,46px);
-  font-weight:700;line-height:1.1;letter-spacing:0;
+  font-weight:700;line-height:1.1;letter-spacing:-0.02em;
   color:var(--text-primary);margin-bottom:18px;
 }
 .contact-subtext{
@@ -504,7 +505,7 @@ textarea:focus-visible{
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  #hero{min-height:100svh;padding-top:112px;padding-bottom:64px;justify-content:center}
+  #hero{min-height:100vh;padding-top:112px;padding-bottom:64px;justify-content:center}
   .hero-eyebrow{margin-bottom:30px}
   .hero-sub-row{margin-top:40px}
   .about-grid{grid-template-columns:1fr;gap:48px}
@@ -525,7 +526,7 @@ textarea:focus-visible{
   .nav-mobile-btn{display:flex}
   #logo-intro .li-symbol{width:82px}
   #logo-intro .li-wordmark{width:min(280px,78vw)}
-  #hero{min-height:100vh;min-height:100svh;min-height:100dvh;padding-top:104px;padding-bottom:48px;justify-content:center}
+  #hero{min-height:auto;padding-top:112px;padding-bottom:58px;justify-content:flex-start}
   .hero-content{max-width:100%}
   .hero-eyebrow{margin-bottom:22px;letter-spacing:0.16em;line-height:1.7}
   .hero-title{font-size:46px;line-height:1.04}
@@ -546,12 +547,6 @@ textarea:focus-visible{
   .hero-tagline{font-size:14px}
   .capability{padding:20px 18px;gap:16px}
 }
-@supports (-webkit-touch-callout:none){
-  #logo-intro{min-height:-webkit-fill-available}
-  @media(max-width:640px){
-    #hero{min-height:-webkit-fill-available}
-  }
-}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{
@@ -570,7 +565,7 @@ textarea:focus-visible{
 <div id="logo-intro">
   <div class="li-wrap">
     <div class="li-symbol-mask">
-      <img class="li-symbol" src="Stericx%20Logo.png" alt="STERICX" decoding="async">
+      <img class="li-symbol" src="stericx-symbol.png" alt="STERICX symbol" decoding="async">
     </div>
     <div class="li-text-line">
       <img class="li-wordmark" src="STERICX%20text.png" alt="STERICX" decoding="async">
@@ -584,7 +579,7 @@ textarea:focus-visible{
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <img src="Stericx%20Logo.png" alt="Stericx mark" decoding="async">
+    <img src="stericx-symbol.png" alt="Stericx mark" decoding="async">
     <span class="nav-logo-text">STERIC<span>X</span></span>
   </a>
   <ul class="nav-links">
@@ -849,29 +844,14 @@ textarea:focus-visible{
   if(prefersReducedMotion && intro){
     intro.style.display="none";
   }
-  function runIntro(){
-    if(!intro || prefersReducedMotion)return;
-    intro.classList.add("phase-1");
-    setTimeout(function(){intro.classList.add("phase-est-out")},1360);
-    setTimeout(function(){intro.classList.add("phase-2")},1780);
-    setTimeout(function(){intro.style.display="none"},2600);
-  }
   if(intro && !prefersReducedMotion){
-    var introImages=Array.prototype.slice.call(intro.querySelectorAll("img"));
-    var imageReady=introImages.map(function(img){
-      if(img.complete)return Promise.resolve();
-      if(img.decode){
-        return img.decode().catch(function(){});
-      }
-      return new Promise(function(resolve){
-        img.addEventListener("load",resolve,{once:true});
-        img.addEventListener("error",resolve,{once:true});
-      });
-    });
-    Promise.race([
-      Promise.all(imageReady),
-      new Promise(function(resolve){setTimeout(resolve,900)})
-    ]).then(function(){setTimeout(runIntro,80)});
+    setTimeout(function(){intro.classList.add("phase-1")},120);
+    setTimeout(function(){intro.classList.add("phase-est-out")},1480);
+    setTimeout(function(){intro.classList.add("phase-2")},1900);
+    setTimeout(function(){intro.style.display="none"},2700);
+  }
+  if(intro){
+    setTimeout(function(){intro.style.display="none"},3600);
   }
 
   // ── NAV SCROLL ──
