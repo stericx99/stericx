@@ -14,7 +14,13 @@ document.querySelector("form").addEventListener("submit", async (e) => {
       body: JSON.stringify({ name, email, message }),
     });
 
-    const data = await response.json();
+    let data;
+
+    try {
+      data = await response.json();
+    } catch {
+      data = { error: "Server returned non-JSON response" };
+    }
 
     if (response.ok) {
       alert("Inquiry sent successfully.");
@@ -27,4 +33,3 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     alert("Unable to send the inquiry right now.");
   }
 });
-}
