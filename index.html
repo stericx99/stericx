@@ -918,10 +918,13 @@ textarea:focus-visible{
         formSubmit.style.cursor="default";
         formSubmit.style.color="var(--text-secondary)";
         contactForm.reset();
-      }catch (error) {
-  console.error("FULL ERROR:", error);
-  return res.status(500).json({ error: error.message });
-}
+      }catch(error){
+        console.error("Frontend error:",error);
+        formSubmit.disabled=false;
+        formSubmit.style.cursor="pointer";
+        formSubmit.innerHTML=originalHtml;
+        window.alert("Unable to send the inquiry right now.");
+      }
     });
   }
   document.addEventListener("keydown",function(e){
