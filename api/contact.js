@@ -1,40 +1,30 @@
-import nodemailer from "nodemailer";
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  const name = document.querySelector("[name='name']").value;
+  const email = document.querySelector("[name='email']").value;
+  const message = document.querySelector("[name='message']").value;
 
   try {
-    const { name, email, message } = req.body || {};
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: "Missing fields" });
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Inquiry sent successfully.");
+    } else {
+      alert("Error: " + (data.error || "Something went wrong"));
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      replyTo: email,
-      subject: `New Contact - ${name}`,
-      text: `
-Name: ${name}
-Email: ${email}
-Message: ${message}
-      `
-    });
-
-    return res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Email error:", error);
-    return res.status(500).json({ success: false });
+    console.error("Frontend error:", error);
+    alert("Unable to send the inquiry right now.");
   }
+});
 }
